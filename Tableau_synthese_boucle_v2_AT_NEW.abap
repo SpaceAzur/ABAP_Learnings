@@ -37,23 +37,29 @@ FORM manage_data.
 
 ENDFORM.
 
-FORM manage_data_2.
+* je définis des paramètre à mon FORM manage_data_2
+* pour pouvoir le rendre réutilisable depuis un autre programme, par qui voudra.
+FORM manage_data_2  USING     it_material TYPE ty_material_tab 
+                    CHANGING  ct_cumul TYPE ty_cumul_tab.
 
-  SORT gt_material BY pstat.
+  data : ls_material TYPE ty_material,
+         ls_cumul    TYPE ty_cumul.
+
+  SORT it_material BY pstat.
 
 * UTILISATION DE 'AT NEW'
 * il faut impérativement que la table interne soit triée sur la colonne clé
-* il faut impérativement que la clé soit le 1er champ de la table interne
+* il faut impérativement que la clé soit la 1ere colonne de la table interne
 
-  LOOP AT gt_material INTO gs_material.
+  LOOP AT it_material INTO ls_material.
 
     AT NEW pstat.
-      CLEAR gs_cumul.
-      gs_cumul-pstat = gs_material-pstat.
+      CLEAR ls_cumul.
+      ls_cumul-pstat = ls_material-pstat.
     ENDAT.
-    gs_cumul-count = gs_cumul-count + 1.
+    ls_cumul-count = ls_cumul-count + 1.
     AT END OF pstat.
-      APPEND gs_cumul TO gt_cumul.
+      APPEND ls_cumul TO ct_cumul.
     ENDAT.
 
 
