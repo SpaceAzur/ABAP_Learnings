@@ -1,0 +1,38 @@
+MODULE FONCTION
+________________________________________________________________________
+
+Un module fonction est contenu dans un "groupe fonction"
+Le groupe fonction peut contenir plusieurs module fonction
+
+------------------------------------------------------------------------
+TRANSACTIONS ==> SE37 ou SE80 (à préférer)
+------------------------------------------------------------------------
+
+SE80 :
+Créer le groupe fonction
+	-> double clic sur groupe fonction pour afficher le programme principal
+
+Créer un module fonction dans groupe fonction
+	-> clic droit sur groupe fonction / Créer / module fonction
+
+------------------------------------------------------------------------
+PARAMETRE D'INTERFACE
+------------------------------------------------------------------------
+
+- IMPORTATION	=> USING
+- EXPORTATION
+- MODIFICATION	=> CHANGING
+
+FORTEMENT RECOMMANDER D'UTILISER LE DICTIONNAIRE DE DONNEES pour les structures, type de table et champs
+
+
+------------------------------------------------------------------------
+(hors paramètre interface)
+
+UITLISATION DE GROUPE DE TYPE --> tte les elements (struct, type de table) doivent commencer avec
+le quadrigramme du groupe de type !!
+					==> déclarer le groupe de type dans le TOP
+
+-------------------------------------------------------------------------
+Je peux créer mes variables et structures locales dans l'onglet SOURCE
+
