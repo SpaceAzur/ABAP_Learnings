@@ -14,7 +14,6 @@ FORM manage_data.
 
   ENDLOOP.
 
-
 ENDFORM.
 
 FORM manage_data_2  USING     it_material TYPE ty_material_tab
